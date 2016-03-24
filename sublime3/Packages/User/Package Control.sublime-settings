@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"LaTeXTools",
 		"Markdown Preview",
 		"Package Control",
 		"SFTP",
