@@ -15,3 +15,8 @@ set colorcolumn=75
 
 " Show current file name
 set laststatus=2
+
+" Vimdiff colors
+if &diff
+    colorscheme myvimdiff
+endif
