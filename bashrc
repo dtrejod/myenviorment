@@ -12,6 +12,9 @@
 export EDITOR=vim
 export VISAUL="$EDITOR"
 
+# less override
+LESSOPEN="|lesspipe.sh %s"; export LESSOPEN
+
 # Setup Terminal
 export TERM=screen-256color
 
@@ -41,6 +44,12 @@ export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib
 # - Setup Prompt -
 # ----------------
 export PS1="\[\033[38;5;20m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]\[\033[38;5;2m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\]:\[$(tput sgr0)\]\[\033[38;5;160m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\][$SHLVL]\\$ \[$(tput sgr0)\]"
+
+# --------
+# - DIRS -
+# --------
+pushd /home/dtrejo/documents/projects > /dev/null
+cd ~
 
 # ---------
 # - MUSIC -
