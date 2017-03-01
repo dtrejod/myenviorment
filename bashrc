@@ -28,7 +28,7 @@ stty -ixon
 PATH=$PATH:/home/dtrejo/.gem/ruby/2.3.0/bin
 
 # Path: Custom binaries
-PATH=$PATH:/home/dtrejo/bin
+PATH=$PATH:/home/dtrejo/.local/bin
 
 # ----------
 # - Python -
@@ -75,3 +75,4 @@ alias "nowplay"="ncmpcpp --current-song && echo ''"
 alias "pdf"=evince
 alias "..."="cd ../.."
 alias ".."="cd .."
+#alias "audio-tv"="pulseaudio-dlna --encoder flac"; for id=$(pactl list short sink-inputs|awk '{ print $1 }'); do patcl move-sink-input $id 8; done"
