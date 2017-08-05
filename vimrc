@@ -34,6 +34,9 @@ set completeopt-=preview
 " ---------------
 " - Default VIM -
 " ---------------
+" Disable mouse
+set mouse=c
+
 filetype plugin indent on
 " Set syntax always on
 syntax on
