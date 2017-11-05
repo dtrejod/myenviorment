@@ -24,6 +24,10 @@ stty -ixon
 # --------------
 # - Setup Path -
 # --------------
+# Nodejs
+PATH=".node_modules/bin:$PATH"
+export npm_config_prefix=~/.node_modules
+
 # Path: Django?
 PATH=$PATH:/home/dtrejo/.gem/ruby/2.3.0/bin
 
