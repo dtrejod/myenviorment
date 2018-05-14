@@ -49,6 +49,10 @@ set shiftwidth=4
 " Shift-Tab unindents
 imap <S-Tab> <C-o><<
 
+" Show Tabs
+set list
+set listchars=tab:>-
+
 " Show line numbers
 set number
 
