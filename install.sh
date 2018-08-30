@@ -17,7 +17,7 @@ if [[ -e ~/.local/bin/ ]]; then
       if [[ -e "$CUR_DIR/submodules/sshrc/sshrc" ]]; then
          ln -sf "$CUR_DIR/submodules/sshrc/sshrc" ~/.local/bin/
       else
-         echo "WARN: Submodules may not be initialized. Run 'git submodule update'"
+         echo "WARN: sshrc not initialized. Run 'git submodule init && git submodule update'"
       fi
    fi
 else
@@ -31,16 +31,16 @@ if [[ -e "$CUR_DIR/submodules/vim-pathogen/autoload/pathogen.vim" ]]; then
       mkdir -p ~/.vim/bundle/ || true
       ln -sf "$CUR_DIR/submodules/vim-sleuth" ~/.vim/bundle/
    else
-      echo "WARN: vim-sleuth no intialized. Run 'git submodule update'"
+      echo "WARN: vim-sleuth not intialized. Run 'git submodule init && git submodule update'"
    fi
    if [[ -e "$CUR_DIR/submodules/vim-sleuth/plugin/sleuth.vim" ]]; then
       mkdir -p ~/.vim/bundle/ || true
       ln -sf "$CUR_DIR/submodules/vim-go" ~/.vim/bundle/
    else
-      echo "WARN: vim-go no intialized. Run 'git submodule update'"
+      echo "WARN: vim-go no intialized. Run 'git submodule init && git submodule update'"
    fi
 else
-   echo "WARN: vim-pathogen no intialized. Run 'git submodule update'"
+   echo "WARN: vim-pathogen no intialized. Run 'git submodule init && git submodule update'"
 fi
 
 echo "Done!"
