@@ -4,8 +4,8 @@
 " Pathogen load
 filetype off
 
-call pathogen#infect()
-call pathogen#helptags()
+silent! call pathogen#infect()
+silent! call pathogen#helptags()
 
 " Trim unused whitespace
 let g:pymode_trim_whitespaces = 1
@@ -41,10 +41,16 @@ filetype plugin indent on
 " Set syntax always on
 syntax on
 
+" Show column/line number stats
+set ruler
+
 " Set Tab equal to four spaces
-set expandtab
-set tabstop=4
-set shiftwidth=4
+if empty(glob("~/.vim/bundle/vim-sleuth/plugin/sleuth.vim"))
+  " Default to 4 spaces
+  set expandtab
+  set tabstop=4
+  set shiftwidth=4
+endif
 
 " Shift-Tab unindents
 imap <S-Tab> <C-o><<
@@ -57,17 +63,16 @@ set listchars=tab:>-
 set number
 
 " Show vertical line at 80 chars
-set colorcolumn=80
+set colorcolumn=120
 
 " Show current file name
 set laststatus=2
 
-" Vimdiff colors
-if &diff
-    colorscheme myvimdiff
-endif
-
 set background=dark
+
+" Tab completion on tab
+set wildmode=longest,list,full
+set wildmenu
 
 " Highlight unwanted space
 :highlight ExtraWhitespace ctermbg=red guibg=red
