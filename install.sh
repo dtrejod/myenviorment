@@ -27,20 +27,21 @@ fi
 if [[ -e "$CUR_DIR/submodules/vim-pathogen/autoload/pathogen.vim" ]]; then
    mkdir -p ~/.vim/autoload || true
    ln -sf "$CUR_DIR/submodules/vim-pathogen/autoload/pathogen.vim" ~/.vim/autoload/
-   if [[ -e "$CUR_DIR/submodules/vim-sleuth/" ]]; then
+   if [[ -e "$CUR_DIR/submodules/vim-sleuth/plugin/sleuth.vim" ]]; then
       mkdir -p ~/.vim/bundle/ || true
       ln -sf "$CUR_DIR/submodules/vim-sleuth" ~/.vim/bundle/
    else
       echo "WARN: vim-sleuth not intialized. Run 'git submodule init && git submodule update'"
    fi
-   if [[ -e "$CUR_DIR/submodules/vim-sleuth/plugin/sleuth.vim" ]]; then
+   if [[ -e "$CUR_DIR/submodules/vim-go/plugin/go.vim" ]]; then
       mkdir -p ~/.vim/bundle/ || true
       ln -sf "$CUR_DIR/submodules/vim-go" ~/.vim/bundle/
    else
       echo "WARN: vim-go no intialized. Run 'git submodule init && git submodule update'"
    fi
 else
-   echo "WARN: vim-pathogen no intialized. Run 'git submodule init && git submodule update'"
+   echo "WARN: vim-pathogen no intialized. All pathogen dependent plugins are being ignored. " \
+         "Run 'git submodule init && git submodule update'"
 fi
 
 echo "Done!"
