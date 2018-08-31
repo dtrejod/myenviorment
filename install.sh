@@ -16,6 +16,7 @@ if [[ -e ~/.local/bin/ ]]; then
    if ! which sshrc 1>/dev/null 2>&1; then
       if [[ -e "$CUR_DIR/submodules/sshrc/sshrc" ]]; then
          ln -sf "$CUR_DIR/submodules/sshrc/sshrc" ~/.local/bin/
+         ln -sf ~/.bashrc ~/.sshrc
       else
          echo "WARN: sshrc not initialized. Run 'git submodule init && git submodule update'"
       fi
