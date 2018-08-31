@@ -13,7 +13,7 @@ if [[ -e ~/.local/bin/ ]]; then
    done
 
    # SSHRC setup
-   if which sshrc 1>/dev/null 2>&1; then
+   if ! which sshrc 1>/dev/null 2>&1; then
       if [[ -e "$CUR_DIR/submodules/sshrc/sshrc" ]]; then
          ln -sf "$CUR_DIR/submodules/sshrc/sshrc" ~/.local/bin/
       else
