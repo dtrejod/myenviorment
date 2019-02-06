@@ -59,7 +59,7 @@ if [[ -e /usr/local/opt/sphinx-doc/bin ]]; then
 fi
 
 # Path: Custom binaries
-PATH=$PATH:$HOME/.local/bin
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 # ----------
 # - Python -
@@ -121,6 +121,7 @@ elif [[ $(uname) == "Darwin" ]]; then
     alias l="ls -hFG"
     alias ll="ls -lhFG"
     alias la="ls -lahFG"
+    alias lscpu="system_profiler SPHardwareDataType"
 
     # ls colors (MACOS) -- dark bg
     export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx

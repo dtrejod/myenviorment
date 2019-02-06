@@ -10,3 +10,6 @@
 [submodule "vim-go"]
 	path = submodules/vim-go
 	url = https://github.com/fatih/vim-go
+[submodule "submodules/vim-puppet"]
+	path = submodules/vim-puppet
+	url = https://github.com/rodjek/vim-puppet.git

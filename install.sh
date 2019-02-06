@@ -42,6 +42,12 @@ if [[ -e "$CUR_DIR/submodules/vim-pathogen/autoload/pathogen.vim" ]]; then
    else
       echo "WARN: vim-go no intialized. Run 'git submodule init && git submodule update'"
    fi
+   if [[ -e "$CUR_DIR/submodules/vim-puppet/syntax/puppet.vim" ]]; then
+      mkdir -p ~/.vim/bundle/ || true
+      ln -sf "$CUR_DIR/submodules/vim-puppet" ~/.vim/bundle/
+   else
+      echo "WARN: vim-puppet no intialized. Run 'git submodule init && git submodule update'"
+   fi
 else
    echo "WARN: vim-pathogen no intialized. All pathogen dependent plugins are being ignored. " \
          "Run 'git submodule init && git submodule update'"
