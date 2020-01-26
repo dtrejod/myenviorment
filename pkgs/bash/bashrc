@@ -28,7 +28,11 @@ set -o emacs
 
 # Setup Default Editor
 export EDITOR=vim
-export VISAUL="$EDITOR"
+export VISUAL="$EDITOR"
+# MACOS: Use brew vim over system vim
+if [[ -f "/usr/local/bin/vim" ]]; then
+    export EDITOR="/usr/local/bin/vim"
+fi
 
 # less override
 if which lesspipe.sh >/dev/null 2>&1; then
@@ -59,7 +63,7 @@ if [[ -e /usr/local/opt/sphinx-doc/bin ]]; then
 fi
 
 # Path: Custom binaries
-PATH=$PATH:$HOME/.local/bin
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 # ----------
 # - Python -
@@ -121,6 +125,8 @@ elif [[ $(uname) == "Darwin" ]]; then
     alias l="ls -hFG"
     alias ll="ls -lhFG"
     alias la="ls -lahFG"
+    alias lscpu="system_profiler SPHardwareDataType"
+    alias rpm2cpio="rpm2cpio.pl"
 
     # ls colors (MACOS) -- dark bg
     export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx

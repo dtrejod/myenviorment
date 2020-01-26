@@ -1,12 +1,3 @@
 [submodule "sshrc"]
 	path = submodules/sshrc
 	url = https://github.com/Russell91/sshrc
-[submodule "vim-sleuth"]
-	path = submodules/vim-sleuth
-	url = https://github.com/tpope/vim-sleuth
-[submodule "vim-pathogen"]
-	path = submodules/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen
-[submodule "vim-go"]
-	path = submodules/vim-go
-	url = https://github.com/fatih/vim-go
