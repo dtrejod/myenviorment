@@ -13,6 +13,11 @@ if [[ ! -d ~/.config/nvim/init.vim ]]; then
 fi
 ln -sf "$CUR_DIR/pkgs/nvim/init.vim" ~/.config/nvim/init.vim
 
+# Use exisiting .gitconfig if it exists
+if [[ ! -f ~/.gitconfig ]]; then
+   ln -sf "$CUR_DIR/pkgs/git/gitconfig" ~/.gitconfig
+fi
+
 if [[ -e ~/.local/bin/ ]]; then
    for s in $(ls $CUR_DIR/bin/*.*); do
       ln -sf "$s" ~/.local/bin/
