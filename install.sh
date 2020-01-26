@@ -12,6 +12,9 @@ if [[ ! -d ~/.config/nvim/init.vim ]]; then
     mkdir -p ~/.config/nvim
 fi
 ln -sf "$CUR_DIR/pkgs/nvim/init.vim" ~/.config/nvim/init.vim
+if [[ ! -f ~/.gitconfig ]]; then
+   ln -sf "$CUR_DIR/pkgs/git/gitconfig" ~/.gitconfig
+fi
 
 if [[ -e ~/.local/bin/ ]]; then
    for s in $(ls $CUR_DIR/bin/*.*); do
