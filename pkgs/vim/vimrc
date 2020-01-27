@@ -27,8 +27,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 " tmuxline.vim (UX)
 Plug 'edkolev/tmuxline.vim'
-" molokai (UX)
-Plug 'fatih/molokai'
 call plug#end()
 
 " ---------------
@@ -102,10 +100,6 @@ endif
 "
 let g:airline_theme='minimalist'
 
-" ----------------------
-" - molokai -
-" ----------------------
-"
 " ----------
 " - python -
 " ----------
