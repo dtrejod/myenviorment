@@ -71,7 +71,7 @@ imap <S-Tab> <C-o><<
 
 " Show Tabs
 set list
-set listchars=tab:>-,extends:›,precedes:‹,nbsp:·,trail:·
+set listchars=tab:>-
 
 " Show line numbers
 set number
