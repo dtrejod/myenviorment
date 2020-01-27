@@ -13,6 +13,9 @@ if [[ ! -d ~/.config/nvim/init.vim ]]; then
 fi
 ln -sf "$CUR_DIR/pkgs/nvim/init.vim" ~/.config/nvim/init.vim
 
+# Source bashrc to pickup changes
+source ~/.bashrc
+
 # Use exisiting .gitconfig if it exists
 if [[ ! -f ~/.gitconfig ]]; then
    ln -sf "$CUR_DIR/pkgs/git/gitconfig" ~/.gitconfig
