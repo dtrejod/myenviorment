@@ -2,6 +2,8 @@
 
 set -exo pipefail
 
+# EXPERIMENTAL
+
 function install_packages {
    install_official_packages
    install_unofficial_packages
@@ -24,9 +26,11 @@ function encrypt_extra_disks {
       PTTYPE="$(sudo blkid -s PTTYPE -o value /dev/$d)"
 
       if [[ -n "$WWNID" ]] && [[ -z "$UUID" ]] && [[ -z "$TYPE" ]] && [[ -n "$PTTYE" ]]; then
-         echo sudo mkdir /etc/luks-keys || true
-         LUKS_KEY="/etc/luks-keys/wwn-$WWNID"
+         LUKS_DIR="/etc/luks-keys"
+         LUKS_KEY="$LUKS_DIR/wwn-$WWNID"
          DISK_NAME="disk-$WWNID"
+
+         echo sudo mkdir "$LUKS_DIR" || true
          echo Generating encryption key for $d...
          echo sudo dd if=/dev/random of="$LUKS_KEY" bs=0 count=256
 
@@ -35,6 +39,7 @@ function encrypt_extra_disks {
 
          UUID="$(sudo blkid -s UUID -o value /dev/$d)"
          echo sudo sh -c "echo -e $DISK_NAME\tUUID=$UUID\t$LUKS_KEY >> /etc/crypttab"
+         echo sudo find "$LUKS_DIR" -type f -exec chmod 600 {} \;
 
          # TODO: Add yubikey support
       fi
