@@ -22,6 +22,7 @@ $ timedatectl set-ntp true
 - Identify devices
 ```
 $ lsblk
+```
 
 - Partition main drive
 ```
