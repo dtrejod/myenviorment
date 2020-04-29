@@ -48,7 +48,7 @@ stty -ixon
 # ------
 # - Go -
 # ------
-export GOPATH=~/documents/projects/gowork
+export GOPATH=~/Documents/projects/gowork
 
 # --------------
 # - Setup Path -

@@ -138,6 +138,12 @@ let g:go_fmt_command = "goimports"
 let g:go_autodetect_gopath = 1
 let g:go_list_type = "quickfix"
 
+" Linter
+let g:go_metalinter_autosave_enabled=['golint', 'govet']
+
+" set tmpl files as go syntax
+au BufNewFile,BufRead,BufReadPost *.tmpl set syntax=go
+
 " colors
 let g:go_highlight_structs = 1
 let g:go_highlight_methods = 1
