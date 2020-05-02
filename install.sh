@@ -11,7 +11,15 @@ ln -sf "$CUR_DIR/pkgs/bash/inputrc" ~/.inputrc
 if [[ ! -d ~/.config/nvim/init.vim ]]; then
     mkdir -p ~/.config/nvim
 fi
+
+# VIM
 ln -sf "$CUR_DIR/pkgs/nvim/init.vim" ~/.config/nvim/init.vim
+if [[ ! -d ~/.vim/ftplugin ]]; then
+   mkdir -p ~/.vim/ftplugin
+fi
+for s in $(ls $CUR_DIR/pkgs/vim/.vim/ftplugin/*.*); do
+   ln -sf "$s" ~/.vim/ftplugin
+done
 
 # Source bashrc to pickup changes
 source ~/.bashrc
