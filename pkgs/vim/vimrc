@@ -27,6 +27,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 " tmuxline.vim (UX)
 Plug 'edkolev/tmuxline.vim'
+" ale (async linter)
+Plug 'dense-analysis/ale'
 call plug#end()
 
 " ---------------
@@ -158,6 +160,12 @@ let g:go_highlight_generate_tags = 1
 "
 let g:tmuxline_powerline_separators = 0
 let g:tmuxline_preset = 'full'
+
+" ----------------------
+" - dense-analysis/ale -
+" ----------------------
+"
+let g:airline#extensions#ale#enabled = 1
 
 " ----------
 " - macros -
