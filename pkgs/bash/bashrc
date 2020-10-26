@@ -45,6 +45,9 @@ export TERM=screen-256color
 # Allow for search forward
 stty -ixon
 
+# Don't store duplicate/space prefixed commands in history
+export HISTCONTROL=ignoreboth
+
 # ------
 # - Go -
 # ------
@@ -116,6 +119,7 @@ alias "dfh"="df -hT"
 alias "ncm"="ncmpcpp"
 alias "nowplay"="ncmpcpp --current-song && echo ''"
 alias sudo="sudo "
+alias "gowork"="cd $GOPATH/src/"
 
 if [[ $(uname) == "Linux" ]]; then
     alias "recent"="find . -type f -exec stat --format '%Y :%y %n' \"{}\" \; | sort -nr | cut -d: -f2- | head"
@@ -126,7 +130,6 @@ elif [[ $(uname) == "Darwin" ]]; then
     alias ll="ls -lhFG"
     alias la="ls -lahFG"
     alias lscpu="system_profiler SPHardwareDataType"
-    alias rpm2cpio="rpm2cpio.pl"
 
     # ls colors (MACOS) -- dark bg
     export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
